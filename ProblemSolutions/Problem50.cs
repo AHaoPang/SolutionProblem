@@ -10,12 +10,24 @@ namespace ProblemSolutions
     {
         public void RunProblem()
         {
+            int i = -2147483648;
+
+            int j = i * -1;
+
             var temp = MyPow(1.00000, -2147483648);
         }
 
         public double MyPow(double x, int n)
         {
-            return MyPow(x, (long)n);
+            if (n == 0) return 1;
+
+            if (n < 0 && n * -1 < 0) return MyPow(x * x, n / 2);
+            if (n < 0) return 1.0 / MyPow(x, -1 * n);
+
+            if (n % 2 == 1)
+                return x * MyPow(x * x, n / 2);
+            else
+                return MyPow(x * x, n / 2);
         }
 
         private double MyPow(double x,long n)
