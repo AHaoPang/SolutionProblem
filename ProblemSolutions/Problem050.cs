@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProblemSolutions
 {
-    public class Problem50 : IProblem
+    public class Problem050 : IProblem
     {
         public void RunProblem()
         {
