@@ -28,8 +28,66 @@ namespace ProblemSolutions
 
         public void SolveSudoku(char[][] board)
         {
-            DFS(board, 0, 0);
+            DFS2(board);
         }
+
+        private bool DFS2(char[][] board)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (board[i][j] == '.')
+                    {
+                        var validNums = GetValidNums(board, i, j);
+                        foreach (var item in validNums)
+                        {
+                            board[i][j] = item;
+
+                            if (DFS2(board))
+                                return true;
+                            else
+                                board[i][j] = '.';
+                        }
+
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// 找到当前位置的可选值
+        /// </summary>
+        private IList<char> GetValidNums(char[][] board, int i, int j)
+        {
+            IList<char> forReturn = new List<char>();
+
+            HashSet<char> currentNums = new HashSet<char>();
+
+            //行列已有值的记录
+            for (int l = 0; l < 9; l++)
+            {
+                if (board[i][l] != '.')
+                    currentNums.Add(board[i][l]);
+                if (board[l][j] != '.')
+                    currentNums.Add(board[l][j]);
+            }
+
+            //单元格已有值的记录
+            int lIndex = i / 3 * 3;
+            int mIndex = j / 3 * 3;
+            for (int l = lIndex; l < lIndex + 3; l++) for (int m = mIndex; m < mIndex + 3; m++) if (board[l][m] != '.') currentNums.Add(board[l][m]);
+
+            //找到可选值
+            for (char k = '1'; k <= '9'; k++) if (!currentNums.Contains(k)) forReturn.Add(k);
+
+            return forReturn;
+        }
+
+        #region Way1
 
         private bool IsEnd = false;
 
@@ -66,38 +124,6 @@ namespace ProblemSolutions
                 DFS(board, nexti, nextj);
         }
 
-        /// <summary>
-        /// 找到当前位置的可选值
-        /// </summary>
-        private IList<char> GetValidNums(char[][] board, int i, int j)
-        {
-            IList<char> forReturn = new List<char>();
-
-            HashSet<char> currentNums = new HashSet<char>();
-
-            //行列已有值的记录
-            for (int l = 0; l < 9; l++)
-            {
-                if (board[i][l] != '.')
-                    currentNums.Add(board[i][l]);
-                if (board[l][j] != '.')
-                    currentNums.Add(board[l][j]);
-            }
-
-            //单元格已有值的记录
-            int lIndex = i / 3 * 3;
-            int mIndex = j / 3 * 3;
-            for (int l = lIndex; l < lIndex + 3; l++) for (int m = mIndex; m < mIndex + 3; m++) if (board[l][m] != '.') currentNums.Add(board[l][m]);
-
-            //找到可选值
-            for (int k = 1; k < 10; k++)
-            {
-                char temp = (char)(k + '0');
-                if (!currentNums.Contains(temp))
-                    forReturn.Add(temp);
-            }
-
-            return forReturn;
-        }
+        #endregion
     }
 }
