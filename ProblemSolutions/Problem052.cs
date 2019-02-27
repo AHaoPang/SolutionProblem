@@ -20,6 +20,10 @@ namespace ProblemSolutions
             return totalWays2;
         }
 
+        /* 复杂度分析:
+         * 本质上，还是在挨个儿位置试验，所以，如果共有n*n个位置的话，复杂度就是O(n^2)了
+         */
+
         int totalWays2 = 0;
 
         private void PutQueens(int totalRow,int curRow,int col,int pie,int na)
@@ -37,10 +41,12 @@ namespace ProblemSolutions
             //挨个儿遍历这些位置，并继续下去
             while(pos > 0)
             {
+                //得到右起的第一个位置
                 var v = pos & -pos;
 
                 PutQueens(totalRow, curRow + 1, col | v, (pie | v) << 1, (na | v) >> 1);
 
+                //去掉右起的第一个位置
                 pos = pos & (pos - 1);
             }
         }
