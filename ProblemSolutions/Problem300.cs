@@ -10,10 +10,40 @@ namespace ProblemSolutions
     {
         public void RunProblem()
         {
-            throw new NotImplementedException();
+            var temp = LengthOfLIS(new int[] { 1, 3, 6, 7, 9, 4, 10, 5, 6 });
         }
 
         public int LengthOfLIS(int[] nums)
+        {
+            /*
+             * 动态规划法解题：
+             * 本题主要关注长度，和具体的内容是无关的
+             * 状态定义：当天元素位置为最后元素时，最大上升子序列的长度；
+             * 推演方程：当前元素组成的最长，肯定是基于前面最长的值；
+             * 时间复杂度：O(n^2)
+             * 空间复杂度：O(1)
+             */
+
+            if (nums.Length == 0) return 0;
+
+            int maxLengthForReturn = 1;
+
+            int[] maxLength = new int[nums.Length];
+            for(int i = 0; i < nums.Length; i++)
+            {
+                int maxL = 1;
+                for (int j = 0; j < i; j++)
+                    if (nums[i] > nums[j] && maxLength[j] >= maxL) maxL = maxLength[j] + 1;
+
+                maxLength[i] = maxL;
+
+                if (maxLengthForReturn < maxL) maxLengthForReturn = maxL;
+            }
+
+            return maxLengthForReturn;
+        }
+
+        public int LengthOfLIS2(int[] nums)
         {
             if (nums.Length < 1) return 0;
 
