@@ -10,10 +10,113 @@ namespace ProblemSolutions
     {
         public void RunProblem()
         {
-            var temp = NumIslands(new char[5, 8]);
+            var charArray = new char[,]
+            {
+                { '1', '1', '1', '1', '0' },
+                { '1', '1', '0', '1', '0' },
+                { '1', '1', '0', '0', '0' },
+                { '0', '0', '0', '0', '0' }
+            };
+
+            var temp = NumIslands(charArray);
         }
 
         public int NumIslands(char[,] grid)
+        {
+            /*
+             * 并查集的解题思路
+             * 构造并查集，初始化的时候，独立成营，然后依据外部依赖条件将独立的部分联合起来，最终会得到岛屿总数
+             * 并查集支持的基本操作：
+             * 1.阵营个数统计；
+             * 2.查找大Boss；
+             * 3.将两个小的阵营合并成大的阵营
+             * 
+             * 若OK，可以考虑最并查集做优化
+             */
+
+            var uf = new UF(grid);
+
+            int x = grid.GetLength(0);
+            int y = grid.GetLength(1);
+
+            for (int i = 0; i < x; i++)
+                for (int j = 0; j < y; j++)
+                {
+                    if (grid[i, j] != '1') continue;
+
+                    if (i - 1 >= 0 && grid[i - 1, j] == '1')
+                        uf.Union(i * y + j, (i - 1) * y + j);
+
+                    if (j - 1 >= 0 && grid[i, j - 1] == '1')
+                        uf.Union(i * y + j, i * y + j - 1);
+                }
+
+            return uf.Count;
+        }
+
+        class UF
+        {
+            private int[] ufArray;
+
+            public int Count { get; set; }
+
+            /// <summary>
+            /// 初始化：统计有多少个符合条件的岛屿
+            /// </summary>
+            public UF(char[,] grid)
+            {
+                ufArray = new int[grid.Length];
+
+                int x = grid.GetLength(0);
+                int y = grid.GetLength(1);
+
+                for (int i = 0; i < x; i++)
+                    for (int j = 0; j < y; j++)
+                    {
+                        if (grid[i, j] == '1')
+                        {
+                            Count++;
+                            ufArray[i * y + j] = i * y + j;
+                        }
+                    }
+            }
+
+            /// <summary>
+            /// 查找一个独立单元所属的阵营
+            /// </summary>
+            private int FindRoot(int i)
+            {
+                /* 此处使用了路径压缩 */
+
+                int root = i;
+                while(ufArray[root] != root)
+                    root = ufArray[root];
+
+                while(ufArray[i] != i)
+                {
+                    i = ufArray[i];
+                    ufArray[i] = root;
+                }
+
+                return root;
+            }
+
+            /// <summary>
+            /// 将两个阵营做合并
+            /// </summary>
+            public void Union(int i, int j)
+            {
+                int rootI = FindRoot(i);
+                int rootJ = FindRoot(j);
+
+                ufArray[rootI] = rootJ;
+
+                if (rootI != rootJ) Count--;
+            }
+        }
+
+        #region Way1
+        public int NumIslands1(char[,] grid)
         {
 
             /*
@@ -56,5 +159,6 @@ namespace ProblemSolutions
             Recursive(i, j - 1, maxI, maxJ, grid);
             Recursive(i, j + 1, maxI, maxJ, grid);
         }
+        #endregion
     }
 }
