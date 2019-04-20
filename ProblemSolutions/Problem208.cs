@@ -71,9 +71,8 @@ namespace ProblemSolutions
 
             return true;
         }
-    }
 
-    public class TreeNode
+        private class TreeNode
     {
         public TreeNode(int arrCount = 26)
         {
@@ -92,4 +91,6 @@ namespace ProblemSolutions
 
         public TreeNode[] Nexts { get; set; }
     }
+    }
+
 }
