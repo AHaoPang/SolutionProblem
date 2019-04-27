@@ -59,12 +59,15 @@
     <Compile Include="Problem081.cs" />
     <Compile Include="Problem083.cs" />
     <Compile Include="Problem092.cs" />
+    <Compile Include="Problem094.cs" />
     <Compile Include="Problem104.cs" />
     <Compile Include="Problem111.cs" />
     <Compile Include="Problem120.cs" />
     <Compile Include="Problem121.cs" />
     <Compile Include="Problem122.cs" />
     <Compile Include="Problem123.cs" />
+    <Compile Include="Problem144.cs" />
+    <Compile Include="Problem145.cs" />
     <Compile Include="Problem152.cs" />
     <Compile Include="Problem153.cs" />
     <Compile Include="Problem169.cs" />
