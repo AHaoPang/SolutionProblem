@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="IProblem.cs" />
     <Compile Include="Problem024.cs" />
+    <Compile Include="Problem030.cs" />
     <Compile Include="Problem033.cs" />
     <Compile Include="Problem036.cs" />
     <Compile Include="Problem037.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Problem679.cs" />
     <Compile Include="Problem687.cs" />
     <Compile Include="Problem692.cs" />
+    <Compile Include="Problem863.cs" />
     <Compile Include="Problem905.cs" />
     <Compile Include="Problem922.cs" />
     <Compile Include="Program.cs" />
