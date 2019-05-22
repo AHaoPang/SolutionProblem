@@ -48,6 +48,7 @@
     <Compile Include="IProblem.cs" />
     <Compile Include="Problem000.cs" />
     <Compile Include="Problem024.cs" />
+    <Compile Include="Problem025.cs" />
     <Compile Include="Problem030.cs" />
     <Compile Include="Problem033.cs" />
     <Compile Include="Problem036.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Problem783.cs" />
     <Compile Include="Problem784.cs" />
     <Compile Include="Problem863.cs" />
+    <Compile Include="Problem895.cs" />
     <Compile Include="Problem905.cs" />
     <Compile Include="Problem922.cs" />
     <Compile Include="Problem928.cs" />
