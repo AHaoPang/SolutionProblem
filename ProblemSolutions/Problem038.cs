@@ -23,6 +23,34 @@ namespace ProblemSolutions
         public string CountAndSay(int n)
         {
             /*
+             * 本次使用递归的方法来求解
+             * 思路：
+             *  1.第n个结果，一定是来源于第n-1个结果的
+             *  2.所以是个，先深入底层，再从底层返回的过程
+             */
+
+            if (n == 1) return "1";
+
+            var strForN = CountAndSay(n - 1);
+            StringBuilder forReturn = new StringBuilder();
+            for (int i = 0; i < strForN.Length; i++)
+            {
+                int countTemp = 1;
+                while (i < strForN.Length - 1 && strForN[i] == strForN[i + 1])
+                {
+                    countTemp++;
+                    i++;
+                }
+
+                forReturn.Append($"{countTemp}{strForN[i]}");
+            }
+
+            return forReturn.ToString();
+        }
+
+        public string CountAndSay2(int n)
+        {
+            /*
              * 一种很有趣的数列~也算是一种规律，即依据规律推理接下来的数
              * 思路：
              *  1.每个序列，都是依据前一个序列得到的，-->因此这可以看做是一个循环
