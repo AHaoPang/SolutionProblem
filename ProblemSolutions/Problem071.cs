@@ -31,6 +31,40 @@ namespace ProblemSolutions
 
         public string SimplifyPath(string path)
         {
+            /* 改进了字符串的切割 */
+
+            Stack<string> dirStack = new Stack<string>();
+            var dirArray = path.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach(var dirItem in dirArray)
+            {
+                switch (dirItem)
+                {
+                    case ".":
+                        break;
+
+                    case "..":
+                        if (dirStack.Any()) dirStack.Pop();
+                        break;
+
+                    default:
+                        dirStack.Push(dirItem);
+                        break;
+                }
+            }
+
+            string forReturn = "";
+            while (dirStack.Any())
+                forReturn = $"/{dirStack.Pop()}{forReturn}";
+
+            //依据业务需求做的特殊处理
+            if (string.IsNullOrWhiteSpace(forReturn))
+                forReturn = "/";
+
+            return forReturn;
+        }
+
+        public string SimplifyPath2(string path)
+        {
             /*
              * 将“正确的但是复杂的决定路径”做“最短最清晰描述的简化”
              * 思路：
