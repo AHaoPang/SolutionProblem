@@ -48,7 +48,7 @@ namespace ProblemSolutions
 
             for (int i = lastPos; i < orderedCandidates.Length; i++)
             {
-                if (target - orderedCandidates[i] < 0) continue;
+                if (target - orderedCandidates[i] < 0) break;
 
                 nums.Add(orderedCandidates[i]);
                 RecurSive(orderedCandidates, i, target - orderedCandidates[i], nums, forReturn);
