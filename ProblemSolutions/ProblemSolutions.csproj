@@ -77,6 +77,7 @@
     <Compile Include="Problem072.cs" />
     <Compile Include="Problem081.cs" />
     <Compile Include="Problem083.cs" />
+    <Compile Include="Problem091.cs" />
     <Compile Include="Problem092.cs" />
     <Compile Include="Problem094.cs" />
     <Compile Include="Problem095.cs" />
