@@ -20,6 +20,36 @@ namespace ProblemSolutions
         public string Multiply(string num1, string num2)
         {
             /*
+             * 用字符串表示的大数相乘
+             * 思路：
+             *  1.两个数字相乘，其实最终结果的位数基本上是确定的，即 m+n 或 m+n-1     -->因此结果数组的长度就是可以预判出来的
+             *  2.用一个数的位去轮循另一个数的所有位，最后的结果位置，一定是 p1+p2+1
+             *  
+             * 时间复杂度：O(m*n)，其实就是一个两层循环
+             * 空间复杂度：O(m+n)，就是预先知道了结果的位数
+             */
+
+            if (num1 == "0" || num2 == "0") return "0";
+
+            int[] resultArray = new int[num2.Length + num1.Length];
+
+            for(int i = num2.Length-1;i >= 0; i--)
+            {
+                for(int j = num1.Length - 1; j >= 0; j--)
+                {
+                    int resultPos = i + j + 1;
+                    resultArray[resultPos] += (num1[j] - '0') * (num2[i] - '0');
+                    resultArray[resultPos - 1] += resultArray[resultPos] / 10;
+                    resultArray[resultPos] = resultArray[resultPos] % 10;
+                }
+            }
+
+            return string.Join("", resultArray).TrimStart('0');
+        }
+
+        public string Multiply2(string num1, string num2)
+        {
+            /*
              * 大数相乘，输入的是字符串，输出的也是字符串
              * 思路：
              *  1.模拟手动计算乘法时的处理方式
