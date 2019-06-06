@@ -73,14 +73,13 @@ namespace ProblemSolutions
         {
             bool forReturn = false;
 
+            var key = $"{sIndex}-{pIndex}";
             try
             {
                 if (s.Length == sIndex && p.Length == pIndex) return forReturn = true;
 
                 if (sIndex > s.Length || p.Length <= pIndex) return forReturn;
 
-                var tempStr = sIndex > s.Length - 1 ? "" : s.Substring(sIndex);
-                string key = $"{tempStr}-{p.Substring(pIndex)}";
                 if (matchR.ContainsKey(key)) return matchR[key];
 
                 char sChar = ' ';
@@ -114,8 +113,6 @@ namespace ProblemSolutions
             }
             finally
             {
-                var tempStr = sIndex > s.Length - 1 ? "" : s.Substring(sIndex);
-                string key = $"{tempStr}-{p.Substring(pIndex)}";
                 matchR[key] = forReturn;
             }
 
