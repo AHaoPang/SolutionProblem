@@ -108,6 +108,7 @@
     <Compile Include="Problem125.cs" />
     <Compile Include="Problem136.cs" />
     <Compile Include="Problem137.cs" />
+    <Compile Include="Problem138.cs" />
     <Compile Include="Problem139.cs" />
     <Compile Include="Problem143.cs" />
     <Compile Include="Problem144.cs" />
