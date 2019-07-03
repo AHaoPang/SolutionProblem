@@ -143,6 +143,7 @@
     <Compile Include="Problem189.cs" />
     <Compile Include="Problem190.cs" />
     <Compile Include="Problem191.cs" />
+    <Compile Include="Problem198.cs" />
     <Compile Include="Problem200.cs" />
     <Compile Include="Problem202.cs" />
     <Compile Include="Problem206.cs" />
@@ -209,6 +210,7 @@
     <Compile Include="Problem961.cs" />
     <Compile Include="Problem977.cs" />
     <Compile Include="Problem997.cs" />
+    <Compile Include="ProblemHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
