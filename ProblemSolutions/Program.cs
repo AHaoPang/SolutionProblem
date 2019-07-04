@@ -10,7 +10,7 @@ namespace ProblemSolutions
     {
         static void Main(string[] args)
         {
-            var p = new Problem204();
+            var p = new Problem205();
             p.RunProblem();
         }
     }
