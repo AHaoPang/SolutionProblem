@@ -44,9 +44,6 @@ namespace ProblemSolutions
             if (t != 2) throw new Exception();
         }
 
-        /// <summary>
-        /// LRU，在实现过程中，头指针使用的伪的，尾指针是实的，其实可以优化成尾也是伪的
-        /// </summary>
         public class LRUCache
         {
             /// <summary>
@@ -57,6 +54,11 @@ namespace ProblemSolutions
                 nodeDic = new Dictionary<int, DoubleLinkedNode>(capacity);
 
                 m_Head = new DoubleLinkedNode(-1, -1);
+                m_Tail = new DoubleLinkedNode(-1, -1);
+
+                m_Head.Next = m_Tail;
+                m_Tail.Prev = m_Head;
+
                 m_Capacity = capacity;
             }
 
@@ -93,7 +95,7 @@ namespace ProblemSolutions
 
                 if (m_Count > m_Capacity)
                 {
-                    nodeDic.Remove(m_Tail.Key);
+                    nodeDic.Remove(m_Tail.Prev.Key);
                     DelNode();
                 }
             }
@@ -122,12 +124,12 @@ namespace ProblemSolutions
             }
 
             /// <summary>
-            /// 头节点，指向一个节点，但是此节点不存储值
+            /// 头节点，指向头节点，但是此节点不存储值
             /// </summary>
             private DoubleLinkedNode m_Head { get; set; }
 
             /// <summary>
-            /// 尾节点，双向链表中，最后一个值的存储位置
+            /// 尾节点，指向尾节点，表示边界，不存储值
             /// </summary>
             private DoubleLinkedNode m_Tail { get; set; }
 
@@ -147,10 +149,7 @@ namespace ProblemSolutions
             private void AddNode(DoubleLinkedNode newNode)
             {
                 newNode.Next = m_Head.Next;
-                if (newNode.Next != null)
-                    newNode.Next.Prev = newNode;
-                else
-                    m_Tail = newNode;
+                newNode.Next.Prev = newNode;
 
                 m_Head.Next = newNode;
                 newNode.Prev = m_Head;
@@ -159,14 +158,12 @@ namespace ProblemSolutions
             }
 
             /// <summary>
-            /// 删除一个节点，依据数据结构，删除的一定是尾节点
+            /// 删除一个节点，依据数据结构，删除的一定是尾节点前的一个节点
             /// </summary>
             private void DelNode()
             {
-                if (m_Tail == null) return;
-
-                m_Tail = m_Tail.Prev;
-                m_Tail.Next = null;
+                m_Tail.Prev = m_Tail.Prev.Prev;
+                m_Tail.Prev.Next = m_Tail;
 
                 m_Count--;
             }
@@ -177,14 +174,10 @@ namespace ProblemSolutions
             private void UpdateNode(DoubleLinkedNode node)
             {
                 node.Prev.Next = node.Next;
-                if (node.Next != null)
-                    node.Next.Prev = node.Prev;
-                else if (m_Count != 1)
-                    m_Tail = m_Tail.Prev;
+                node.Next.Prev = node.Prev;
 
                 node.Next = m_Head.Next;
-                if (node.Next != null)
-                    node.Next.Prev = node;
+                node.Next.Prev = node;
 
                 m_Head.Next = node;
                 node.Prev = m_Head;
