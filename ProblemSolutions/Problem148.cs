@@ -50,22 +50,16 @@ namespace ProblemSolutions
                 var tailNode = dummy;
                 while (true)
                 {
-                    //节点获取
                     var firstRange = linkHead;
                     var nextRange = GetNodes(firstRange, i);
-
                     linkHead = GetNodes(nextRange, i);
 
-                    //若两个节点都为Null，那么就不要合并了，中断
                     if (firstRange == null && nextRange == null) break;
-
                     if (firstRange != null && nextRange != null) mergeCount++;
 
-                    //节点合并
                     var mergedRange = MergedNodes(firstRange, nextRange);
                     tailNode.next = mergedRange;
 
-                    //始终保持指向尾节点
                     while (tailNode.next != null) tailNode = tailNode.next;
                 }
 
@@ -84,13 +78,11 @@ namespace ProblemSolutions
             ListNode dummy = new ListNode(-1);
             dummy.next = nodes;
 
-            for(int i = 0;i < count; i++)
+            for (int i = 0; i < count; i++)
             {
                 if (dummy.next == null) break;
                 dummy = dummy.next;
             }
-
-            if (dummy == null) return null;
 
             var forReturn = dummy.next;
             dummy.next = null;
@@ -116,7 +108,7 @@ namespace ProblemSolutions
                 int secondValue = int.MaxValue;
                 if (secondIndex != null) secondValue = secondIndex.val;
 
-                if (firstValue < secondValue && firstIndex != null)
+                if (firstValue <= secondValue && firstIndex != null)
                 {
                     tail.next = firstIndex;
                     firstIndex = firstIndex.next;
