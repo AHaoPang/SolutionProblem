@@ -41,7 +41,7 @@ namespace ProblemSolutions
             //开始截取k段链表
             ListNode[] forReturn = new ListNode[k];
             var newRoot = root;
-            for(int i = 0;i < k; i++)
+            for (int i = 0; i < k; i++)
             {
                 int perCountTemp = perCount;
                 if (subOne != 0 && i >= subOne) perCountTemp--;
@@ -62,7 +62,7 @@ namespace ProblemSolutions
         {
             int forReturn = 0;
 
-            while(root != null)
+            while (root != null)
             {
                 forReturn++;
                 root = root.next;
@@ -74,13 +74,13 @@ namespace ProblemSolutions
         /// <summary>
         /// 切割链表的一段下来，然后返回这一段，以及剩下的段
         /// </summary>
-        private Tuple<ListNode,ListNode> CutNode(ListNode root,int size)
+        private Tuple<ListNode, ListNode> CutNode(ListNode root, int size)
         {
             ListNode cutPiece = root;
             ListNode cutPieceTail = root;
 
             int count = 0;
-            while(count < size - 1)
+            while (count < size - 1)
             {
                 if (cutPieceTail == null) break;
                 count++;
@@ -89,9 +89,29 @@ namespace ProblemSolutions
             }
 
             var nextPiect = cutPieceTail?.next;
-            if(cutPieceTail != null) cutPieceTail.next = null;
+            if (cutPieceTail != null) cutPieceTail.next = null;
 
             return Tuple.Create(cutPiece, nextPiect);
+        }
+
+        private Tuple<ListNode, ListNode> CutNodeV2(ListNode root, int size)
+        {
+            /* 这种截取段数的方法，更加的直观，要几个，tail就指向几个，直接了当 */
+            var dummy = new ListNode(-1);
+            dummy.next = root;
+            var tail = dummy;
+
+            for (int i = 0; i < size; i++)
+            {
+                if (tail == null) break;
+
+                tail = tail.next;
+            }
+
+            var nextPiece = tail?.next;
+            if (tail != null) tail.next = null;
+
+            return Tuple.Create(dummy.next, nextPiece);
         }
     }
 }
