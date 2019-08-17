@@ -215,6 +215,7 @@
     <Compile Include="Problem400.cs" />
     <Compile Include="Problem401.cs" />
     <Compile Include="Problem405.cs" />
+    <Compile Include="Problem421.cs" />
     <Compile Include="Problem429.cs" />
     <Compile Include="Problem430.cs" />
     <Compile Include="Problem433.cs" />
@@ -223,6 +224,8 @@
     <Compile Include="Problem449.cs" />
     <Compile Include="Problem455.cs" />
     <Compile Include="Problem458.cs" />
+    <Compile Include="Problem461.cs" />
+    <Compile Include="Problem476.cs" />
     <Compile Include="Problem491.cs" />
     <Compile Include="Problem496.cs" />
     <Compile Include="Problem503.cs" />
