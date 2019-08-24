@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProblemSolutions", "Problem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETFrameworkAttempt", "NETFrameworkAttempt\NETFrameworkAttempt.csproj", "{DD63ADA8-E750-456C-955E-FC8025E91BF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETFramework472Attempt", "NETFramework472Attempt\NETFramework472Attempt.csproj", "{87B2E008-82DB-4826-B724-4841137D5A42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DD63ADA8-E750-456C-955E-FC8025E91BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD63ADA8-E750-456C-955E-FC8025E91BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD63ADA8-E750-456C-955E-FC8025E91BF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87B2E008-82DB-4826-B724-4841137D5A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B2E008-82DB-4826-B724-4841137D5A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B2E008-82DB-4826-B724-4841137D5A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B2E008-82DB-4826-B724-4841137D5A42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
