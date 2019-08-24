@@ -18,8 +18,11 @@ namespace ProblemSolutions
         {
             if (arr1.Length != arr1.Length) return false;
 
-            for (int i = 0; i < arr1.Length; i++)
-                if (arr1[i] != arr2[i]) return false;
+            var arr1Temp = arr1.OrderBy(i => i).ToArray();
+            var arr2Temp = arr2.OrderBy(i => i).ToArray();
+
+            for (int i = 0; i < arr1Temp.Length; i++)
+                if (arr1Temp[i] != arr2Temp[i]) return false;
 
             return true;
         }
