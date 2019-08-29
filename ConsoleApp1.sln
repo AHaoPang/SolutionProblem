@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETFrameworkAttempt", "NETF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETFramework472Attempt", "NETFramework472Attempt\NETFramework472Attempt.csproj", "{87B2E008-82DB-4826-B724-4841137D5A42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETFramework45Attempt", "NETFramework45Attempt\NETFramework45Attempt.csproj", "{0001FA76-C461-415D-BB91-157427EBA4D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{87B2E008-82DB-4826-B724-4841137D5A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87B2E008-82DB-4826-B724-4841137D5A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87B2E008-82DB-4826-B724-4841137D5A42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0001FA76-C461-415D-BB91-157427EBA4D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0001FA76-C461-415D-BB91-157427EBA4D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0001FA76-C461-415D-BB91-157427EBA4D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0001FA76-C461-415D-BB91-157427EBA4D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

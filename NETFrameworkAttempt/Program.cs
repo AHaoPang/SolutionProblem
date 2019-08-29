@@ -14,8 +14,8 @@ namespace NETFrameworkAttempt
 
             //(int a, int b) testTuple = (a: 15, b: 20);
 
-            
 
+            var testTuple = (a: 15, b: 20);
         }
     }
 }

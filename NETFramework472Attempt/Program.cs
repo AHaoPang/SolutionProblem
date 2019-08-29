@@ -10,6 +10,7 @@ namespace NETFramework472Attempt
     {
         static void Main(string[] args)
         {
+            var testTuple = (a: 15, b: 20);
         }
     }
 }
