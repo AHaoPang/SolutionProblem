@@ -10,7 +10,12 @@ namespace ProblemSolutions
     {
         public void RunProblem()
         {
-            throw new NotImplementedException();
+            Twitter t = new Twitter();
+
+            t.PostTweet(1, 1);
+            t.PostTweet(1, 2);
+            t.PostTweet(2, 1);
+            t.PostTweet(2, 2);
         }
 
         public class Twitter
