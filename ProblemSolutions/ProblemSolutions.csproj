@@ -216,12 +216,14 @@
     <Compile Include="Problem371.cs" />
     <Compile Include="Problem373.cs" />
     <Compile Include="Problem380.cs" />
+    <Compile Include="Problem387.cs" />
     <Compile Include="Problem389.cs" />
     <Compile Include="Problem393.cs" />
     <Compile Include="Problem397.cs" />
     <Compile Include="Problem400.cs" />
     <Compile Include="Problem401.cs" />
     <Compile Include="Problem405.cs" />
+    <Compile Include="Problem409.cs" />
     <Compile Include="Problem421.cs" />
     <Compile Include="Problem429.cs" />
     <Compile Include="Problem430.cs" />
