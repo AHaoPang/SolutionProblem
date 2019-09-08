@@ -8,9 +8,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>ProblemSolutions</RootNamespace>
     <AssemblyName>ProblemSolutions</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -255,9 +256,12 @@
     <Compile Include="Problem594.cs" />
     <Compile Include="Problem599.cs" />
     <Compile Include="Problem609.cs" />
+    <Compile Include="Problem645.cs" />
+    <Compile Include="Problem648.cs" />
     <Compile Include="Problem653.cs" />
     <Compile Include="Problem657.cs" />
     <Compile Include="Problem671.cs" />
+    <Compile Include="Problem676.cs" />
     <Compile Include="Problem679.cs" />
     <Compile Include="Problem687.cs" />
     <Compile Include="Problem692.cs" />
