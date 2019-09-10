@@ -270,9 +270,11 @@
     <Compile Include="Problem698.cs" />
     <Compile Include="Problem703.cs" />
     <Compile Include="Problem705.cs" />
+    <Compile Include="Problem718.cs" />
     <Compile Include="Problem720.cs" />
     <Compile Include="Problem725.cs" />
     <Compile Include="Problem739.cs" />
+    <Compile Include="Problem748.cs" />
     <Compile Include="Problem756.cs" />
     <Compile Include="Problem762.cs" />
     <Compile Include="Problem783.cs" />
