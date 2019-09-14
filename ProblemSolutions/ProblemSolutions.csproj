@@ -294,8 +294,11 @@
     <Compile Include="Problem922.cs" />
     <Compile Include="Problem928.cs" />
     <Compile Include="Problem930.cs" />
+    <Compile Include="Problem939.cs" />
     <Compile Include="Problem941.cs" />
     <Compile Include="Problem944.cs" />
+    <Compile Include="Problem953.cs" />
+    <Compile Include="Problem954.cs" />
     <Compile Include="Problem961.cs" />
     <Compile Include="Problem977.cs" />
     <Compile Include="Problem997.cs" />
