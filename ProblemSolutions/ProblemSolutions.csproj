@@ -179,6 +179,7 @@
     <Compile Include="Problem219.cs" />
     <Compile Include="Problem220.cs" />
     <Compile Include="Problem221.cs" />
+    <Compile Include="Problem223.cs" />
     <Compile Include="Problem225.cs" />
     <Compile Include="Problem231.cs" />
     <Compile Include="Problem232.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="Problem240.cs" />
     <Compile Include="Problem241.cs" />
     <Compile Include="Problem242.cs" />
+    <Compile Include="Problem258.cs" />
     <Compile Include="Problem260.cs" />
     <Compile Include="Problem263.cs" />
     <Compile Include="Problem264.cs" />
