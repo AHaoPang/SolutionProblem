@@ -24,6 +24,8 @@ namespace ProblemSolutions
 
         private int GetGcd(int x, int y)
         {
+            /* 要考虑一个为0，以及两个都为0的情况 */
+
             int a = Math.Max(x, y);
             int b = Math.Min(x, y);
 
