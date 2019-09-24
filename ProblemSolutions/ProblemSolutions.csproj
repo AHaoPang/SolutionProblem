@@ -257,12 +257,14 @@
     <Compile Include="Problem463.cs" />
     <Compile Include="Problem476.cs" />
     <Compile Include="Problem477.cs" />
+    <Compile Include="Problem478.cs" />
     <Compile Include="Problem491.cs" />
     <Compile Include="Problem496.cs" />
     <Compile Include="Problem500.cs" />
     <Compile Include="Problem503.cs" />
     <Compile Include="Problem507.cs" />
     <Compile Include="Problem508.cs" />
+    <Compile Include="Problem523.cs" />
     <Compile Include="Problem525.cs" />
     <Compile Include="Problem535.cs" />
     <Compile Include="Problem554.cs" />
